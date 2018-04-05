@@ -20,7 +20,15 @@ type
     DBGrid1: TDBGrid;
     ActionManagerCadastro: TActionManager;
     ImageListCadastro: TImageList;
-    Inserir: TAction;
+    actInserir: TAction;
+    PageControl1: TPageControl;
+    actEditar: TAction;
+    actexcluir: TAction;
+    actsalvar: TAction;
+    actcancelar: TAction;
+    actpesquisar: TAction;
+    actimprimir: TAction;
+    actfechar: TAction;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }

@@ -23,9 +23,6 @@ object frmcadastrobasico: Tfrmcadastrobasico
     Width = 759
     Height = 19
     Panels = <>
-    ExplicitLeft = 584
-    ExplicitTop = 288
-    ExplicitWidth = 0
   end
   object Panel1: TPanel
     Left = 0
@@ -35,14 +32,11 @@ object frmcadastrobasico: Tfrmcadastrobasico
     Align = alBottom
     Caption = 'Panel1'
     TabOrder = 1
-    ExplicitLeft = 296
-    ExplicitTop = 176
-    ExplicitWidth = 185
     object ActionToolBar1: TActionToolBar
       Left = 1
       Top = 1
       Width = 757
-      Height = 34
+      Height = 42
       ActionManager = ActionManagerCadastro
       Caption = 'ActionToolBar1'
       Color = clMenuBar
@@ -67,17 +61,12 @@ object frmcadastrobasico: Tfrmcadastrobasico
     ActivePage = tbsPesquisa
     Align = alClient
     TabOrder = 2
-    ExplicitHeight = 295
     object tbscadastro: TTabSheet
       Caption = 'Cadastro'
-      ExplicitHeight = 267
     end
     object tbsPesquisa: TTabSheet
       Caption = 'Pesquisa'
       ImageIndex = 1
-      ExplicitLeft = 7
-      ExplicitTop = 23
-      ExplicitHeight = 267
     end
   end
   object DBGrid1: TDBGrid
@@ -95,19 +84,117 @@ object frmcadastrobasico: Tfrmcadastrobasico
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
+  object PageControl1: TPageControl
+    Left = 128
+    Top = 97
+    Width = 289
+    Height = 193
+    TabOrder = 4
+  end
   object dsTabela: TDataSource
     Left = 672
     Top = 32
   end
   object ActionManagerCadastro: TActionManager
+    ActionBars = <
+      item
+        Items = <
+          item
+            Action = actInserir
+            Caption = '&Inserir'
+            ImageIndex = 54
+            ShortCut = 114
+          end
+          item
+            Action = actEditar
+            Caption = '&Editar'
+            ImageIndex = 168
+            ShortCut = 115
+          end
+          item
+            Action = actexcluir
+            Caption = 'E&xcluir'
+            ImageIndex = 72
+            ShortCut = 116
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Action = actsalvar
+            Caption = '&Salvar'
+            ImageIndex = 243
+            ShortCut = 117
+          end
+          item
+            Action = actcancelar
+            Caption = '&Cancelar'
+            ImageIndex = 264
+            ShortCut = 113
+          end
+          item
+            Action = actpesquisar
+            Caption = '&Pesquisar'
+            ImageIndex = 224
+            ShortCut = 112
+          end
+          item
+            Action = actimprimir
+            Caption = 'I&mprimir'
+            ImageIndex = 221
+            ShortCut = 120
+          end
+          item
+            Action = actfechar
+            Caption = '&Fechar'
+            ImageIndex = 293
+            ShortCut = 16499
+          end>
+        ActionBar = ActionToolBar1
+      end>
     Images = ImageListCadastro
     Left = 576
     Top = 32
     StyleName = 'Platform Default'
-    object Inserir: TAction
+    object actInserir: TAction
       Caption = 'Inserir'
       ImageIndex = 54
       ShortCut = 114
+    end
+    object actEditar: TAction
+      Caption = 'Editar'
+      ImageIndex = 168
+      ShortCut = 115
+    end
+    object actexcluir: TAction
+      Caption = 'Excluir'
+      ImageIndex = 72
+      ShortCut = 116
+    end
+    object actsalvar: TAction
+      Caption = 'Salvar'
+      ImageIndex = 243
+      ShortCut = 117
+    end
+    object actcancelar: TAction
+      Caption = 'Cancelar'
+      ImageIndex = 264
+      ShortCut = 113
+    end
+    object actpesquisar: TAction
+      Caption = 'Pesquisar'
+      ImageIndex = 224
+      ShortCut = 112
+    end
+    object actimprimir: TAction
+      Caption = 'Imprimir'
+      ImageIndex = 221
+      ShortCut = 120
+    end
+    object actfechar: TAction
+      Caption = 'Fechar'
+      ImageIndex = 293
+      ShortCut = 16499
     end
   end
   object ImageListCadastro: TImageList
@@ -116,7 +203,7 @@ object frmcadastrobasico: Tfrmcadastrobasico
     Left = 576
     Top = 105
     Bitmap = {
-      494C01013E015001140020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013E015001180020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000000A000001002000000000000000
       1400000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
