@@ -1,0 +1,101 @@
+object frmcadastrobasico: Tfrmcadastrobasico
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Cadastro'
+  ClientHeight = 355
+  ClientWidth = 759
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnKeyPress = FormKeyPress
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 336
+    Width = 759
+    Height = 19
+    Panels = <>
+    ExplicitLeft = 584
+    ExplicitTop = 288
+    ExplicitWidth = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 295
+    Width = 759
+    Height = 41
+    Align = alBottom
+    Caption = 'Panel1'
+    TabOrder = 1
+    ExplicitLeft = 296
+    ExplicitTop = 176
+    ExplicitWidth = 185
+    object ActionToolBar1: TActionToolBar
+      Left = 1
+      Top = 1
+      Width = 757
+      Height = 34
+      Caption = 'ActionToolBar1'
+      Color = clMenuBar
+      ColorMap.DisabledFontColor = 7171437
+      ColorMap.HighlightColor = clWhite
+      ColorMap.BtnSelectedFont = clBlack
+      ColorMap.UnusedColor = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Spacing = 0
+    end
+  end
+  object TPageControl
+    Left = 0
+    Top = 0
+    Width = 759
+    Height = 72
+    ActivePage = tbsPesquisa
+    Align = alClient
+    TabOrder = 2
+    ExplicitHeight = 295
+    object tbscadastro: TTabSheet
+      Caption = 'Cadastro'
+      ExplicitHeight = 267
+    end
+    object tbsPesquisa: TTabSheet
+      Caption = 'Pesquisa'
+      ImageIndex = 1
+      ExplicitLeft = 7
+      ExplicitTop = 23
+      ExplicitHeight = 267
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 72
+    Width = 759
+    Height = 223
+    Align = alBottom
+    DataSource = dsTabela
+    DrawingStyle = gdsGradient
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object dsTabela: TDataSource
+    Left = 672
+    Top = 32
+  end
+end
