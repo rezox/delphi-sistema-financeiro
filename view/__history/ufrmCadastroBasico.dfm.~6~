@@ -85,10 +85,10 @@ object frmcadastrobasico: Tfrmcadastrobasico
     TitleFont.Style = []
   end
   object PageControl1: TPageControl
-    Left = 470
-    Top = 96
+    Left = 128
+    Top = 97
     Width = 289
-    Height = 194
+    Height = 193
     TabOrder = 4
   end
   object dsTabela: TDataSource
@@ -160,54 +160,41 @@ object frmcadastrobasico: Tfrmcadastrobasico
       Caption = 'Inserir'
       ImageIndex = 54
       ShortCut = 114
-      OnExecute = actInserirExecute
     end
     object actEditar: TAction
       Caption = 'Editar'
-      Enabled = False
       ImageIndex = 168
       ShortCut = 115
-      OnExecute = actEditarExecute
     end
     object actexcluir: TAction
       Caption = 'Excluir'
-      Enabled = False
       ImageIndex = 72
       ShortCut = 116
-      OnExecute = actexcluirExecute
     end
     object actsalvar: TAction
       Caption = 'Salvar'
-      Enabled = False
       ImageIndex = 243
       ShortCut = 117
-      OnExecute = actsalvarExecute
     end
     object actcancelar: TAction
       Caption = 'Cancelar'
-      Enabled = False
       ImageIndex = 264
       ShortCut = 113
-      OnExecute = actcancelarExecute
     end
     object actpesquisar: TAction
       Caption = 'Pesquisar'
       ImageIndex = 224
       ShortCut = 112
-      OnExecute = actpesquisarExecute
     end
     object actimprimir: TAction
       Caption = 'Imprimir'
-      Enabled = False
       ImageIndex = 221
       ShortCut = 120
-      OnExecute = actimprimirExecute
     end
     object actfechar: TAction
       Caption = 'Fechar'
       ImageIndex = 293
       ShortCut = 16499
-      OnExecute = actfecharExecute
     end
   end
   object ImageListCadastro: TImageList
@@ -216,7 +203,7 @@ object frmcadastrobasico: Tfrmcadastrobasico
     Left = 576
     Top = 105
     Bitmap = {
-      494C01013E0150011C0020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01013E015001180020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000000A000001002000000000000000
       1400000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

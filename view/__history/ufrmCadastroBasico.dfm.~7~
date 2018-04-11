@@ -140,15 +140,8 @@ object frmcadastrobasico: Tfrmcadastrobasico
           end
           item
             Action = actimprimir
-            Caption = 'I&mprimir'
             ImageIndex = 221
             ShortCut = 120
-          end
-          item
-            Action = actfechar
-            Caption = '&Fechar'
-            ImageIndex = 293
-            ShortCut = 16499
           end>
         ActionBar = ActionToolBar1
       end>
