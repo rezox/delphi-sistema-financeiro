@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.ComCtrls, Vcl.ToolWin, Vcl.ActnMan, Vcl.ActnCtrls,
   Vcl.ExtCtrls, System.Actions, Vcl.ActnList, System.ImageList, Vcl.ImgList,
-  Vcl.PlatformDefaultStyleActnCtrls;
+  Vcl.PlatformDefaultStyleActnCtrls, Datasnap.DBClient;
 
 type
   Tfrmcadastrobasico = class(TForm)
@@ -15,14 +15,14 @@ type
     StatusBar1: TStatusBar;
     Panel1: TPanel;
     ActionToolBar1: TActionToolBar;
+    PageControl1: TPageControl;
     tbscadastro: TTabSheet;
     tbsPesquisa: TTabSheet;
     DBGrid1: TDBGrid;
     ActionManagerCadastro: TActionManager;
     ImageListCadastro: TImageList;
-    actInserir: TAction;
-    PageControl1: TPageControl;
-    actEditar: TAction;
+    actinserir: TAction;
+    acteditar: TAction;
     actexcluir: TAction;
     actsalvar: TAction;
     actcancelar: TAction;
@@ -30,6 +30,19 @@ type
     actimprimir: TAction;
     actfechar: TAction;
     procedure FormKeyPress(Sender: TObject; var Key: Char);
+    procedure actinserirExecute(Sender: TObject);
+    procedure acteditarExecute(Sender: TObject);
+    procedure actexcluirExecute(Sender: TObject);
+    procedure actsalvarExecute(Sender: TObject);
+    procedure actcancelarExecute(Sender: TObject);
+    procedure actpesquisarExecute(Sender: TObject);
+    procedure actimprimirExecute(Sender: TObject);
+    procedure actfecharExecute(Sender: TObject);
+    procedure actcancelarUpdate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure tbsPesquisaShow(Sender: TObject);
+    procedure actinserirUpdate(Sender: TObject);
+    procedure actsalvarUpdate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,12 +56,86 @@ implementation
 
 {$R *.dfm}
 
+uses ModConexao;
+
+procedure Tfrmcadastrobasico.actcancelarExecute(Sender: TObject);
+begin
+
+TClientDataSet(dsTabela).Cancel;
+end;
+
+procedure Tfrmcadastrobasico.actcancelarUpdate(Sender: TObject);
+begin
+  actcancelar.Enabled := actsalvar.Enabled = true;
+end;
+
+procedure Tfrmcadastrobasico.acteditarExecute(Sender: TObject);
+begin
+//
+end;
+
+procedure Tfrmcadastrobasico.actexcluirExecute(Sender: TObject);
+begin
+//
+end;
+
+procedure Tfrmcadastrobasico.actfecharExecute(Sender: TObject);
+begin
+close;
+end;
+
+procedure Tfrmcadastrobasico.actimprimirExecute(Sender: TObject);
+begin
+  //
+end;
+
+procedure Tfrmcadastrobasico.actinserirExecute(Sender: TObject);
+begin
+if PageControl1.ActivePage = tbsPesquisa then
+PageControl1.ActivePage := tbsCadastro;
+ TClientDataSet(dsTabela.DataSet).Open;
+ TClientDataSet(dsTabela.DataSet).Insert;
+end;
+
+procedure Tfrmcadastrobasico.actinserirUpdate(Sender: TObject);
+begin
+actinserir.Enabled := dsTabela.State in [dsBrowse,dsInactive];
+end;
+
+procedure Tfrmcadastrobasico.actpesquisarExecute(Sender: TObject);
+begin
+TClientDataSet(dsTabela.DataSet).Close;
+TClientDataSet(dsTabela.DataSet).Open;
+end;
+
+procedure Tfrmcadastrobasico.actsalvarExecute(Sender: TObject);
+begin
+//
+end;
+
+procedure Tfrmcadastrobasico.actsalvarUpdate(Sender: TObject);
+begin
+actsalvar.Enabled := dsTabela.State in [dsInsert,dsEdit];
+end;
+
+procedure Tfrmcadastrobasico.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+    TClientDataSet(dsTabela.DataSet).Cancel;
+     TClientDataSet(dsTabela.DataSet).Close;
+end;
+
 procedure Tfrmcadastrobasico.FormKeyPress(Sender: TObject; var Key: Char);
 begin
-  if key = #27 then
-  close;
-  if key = #13 then
-  Perform(WM_NEXTDLGCTL,0,0);
+if key = #27 then
+     close;
+
+if key = #13 then
+ Perform(WM_NEXTDLGCTL,0,0);
+end;
+procedure Tfrmcadastrobasico.tbsPesquisaShow(Sender: TObject);
+begin
+PageControl1.ActivePage := tbsPesquisa;
 end;
 
 end.
